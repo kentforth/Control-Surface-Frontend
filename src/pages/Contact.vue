@@ -1,11 +1,15 @@
 <template>
   <div class="contact">
-    <h1>Contact</h1>
+    <Navigation/>
   </div>
 </template>
 
 <script>
-export default {
-  // name: 'PageName',
-}
+  import Navigation from "components/Navigation";
+
+  export default {
+    components: {Navigation}
+
+    // name: 'PageName',
+  }
 </script>

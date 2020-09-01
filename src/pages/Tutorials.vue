@@ -1,11 +1,13 @@
 <template>
   <div class="tutorials">
-    <h1>Tutorials</h1>
+    <Navigation/>
   </div>
 </template>
 
 <script>
+import Navigation from "components/Navigation";
 export default {
   name: 'Tutorials',
+  components: {Navigation},
 }
 </script>

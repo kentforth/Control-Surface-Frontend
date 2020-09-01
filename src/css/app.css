@@ -11,6 +11,9 @@
   --transparent: rgba(177, 186, 224, 0.5);
   --gray: rgba(221, 226, 244, 0.5);
   --accent: #D9D57C;
+
+  --transition: all 0.3s ease;
+  --height: 7em;
 }
 
 /*Background Colors*/
@@ -100,7 +103,8 @@ h2 {
 }
 
 h3 {
-
+color: var(--light);
+  font-family: 'Inter', sans-serif;
 }
 
 ul {
