@@ -1,0 +1,126 @@
+/* app global css */
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --primary: #5E668C;
+  --secondary: #5067D9;
+  --dark: #242940;
+  --light:#DDE2F4;
+  --light-blue: #919DD9;
+  --transparent: rgba(177, 186, 224, 0.5);
+  --gray: rgba(221, 226, 244, 0.5);
+  --accent: #D9D57C;
+}
+
+/*Background Colors*/
+.bg-primary {
+  background-color: var(--primary) !important;
+}
+
+.bg-secondary {
+  background-color: var(--secondary) !important;
+}
+.bg-dark {
+  background-color: var(--dark) !important;
+}
+
+.bg-light {
+  background-color: var(--light) !important;
+}
+
+.bg-light-blue {
+  background-color: var(--light-blue) !important;
+}
+
+.bg-transparent {
+  background-color: var(--transparent) !important;
+}
+
+.bg-gray {
+  background-color: var(--gray) !important;
+}
+
+.bg-accent {
+  background-color: var(--accent) !important;
+}
+
+/*Colors*/
+.primary {
+  color: var(--primary) !important;
+}
+
+.secondary {
+  color: var(--secondary) !important;
+}
+
+.dark {
+  color: var(--dark) !important;
+}
+
+.light {
+  color: var(--light) !important;
+}
+
+.light-blue {
+  color: var(--light-blue) !important;
+}
+
+.transparent {
+  color: var(--transparent) !important;
+}
+
+.gray {
+  color: var(--gray) !important;
+}
+
+.accent {
+  color: var(--accent) !important;
+}
+
+* {
+  box-sizing: border-box;
+}
+html {
+  font-size: 16px;
+}
+body {
+  -webkit-font-smoothing: antialiased;
+  font-family: 'IBM Plex Sans', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+
+}
+
+h2 {
+
+}
+
+h3 {
+
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  cursor: pointer;
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-size: 1.6rem;
+  font-weight: 500;
+  color: var(--light);
+}
+
+p {
+
+}
+
+.container {
+  max-width: 90%;
+  margin: 0 auto;
+}
