@@ -1,5 +1,5 @@
 <template>
-  <div class="tutorials">
+  <div class="sketches">
     <Navigation/>
   </div>
 </template>
@@ -7,10 +7,13 @@
 <script>
 import Navigation from "components/Navigation";
 export default {
-  name: 'Tutorials',
+  name: 'SKetches',
   components: {Navigation},
   meta: {
-    title: 'Tutorials'
+    title: 'Sketches'
   }
 }
 </script>
+<style scoped>
+
+</style>

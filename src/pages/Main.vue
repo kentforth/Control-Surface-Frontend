@@ -25,11 +25,13 @@
         <img src="../assets/images/icons/arrow.png" alt="">
       </div>
       <h3>Create your own DIY Midi Controller
-          with library <a href="https://github.com/tttapa/Control-Surface" class="secondary" target="_blank"
+          with library <a
+          href="https://github.com/tttapa/Control-Surface" class="secondary" target="_blank"
         >Control Surface</a> <br> <br>on Arduino
           boards</h3>
 
     </div>
+
   </div>
 </template>
 
@@ -44,7 +46,9 @@
         slide: 1,
       }
     },
-
+    meta: {
+      title: 'Home'
+    }
   }
 </script>
 <style scoped>
@@ -73,5 +77,11 @@
 
   h3 > a {
     font-size: 3rem;
+  }
+
+  @media screen and (max-width: 900px) {
+.slider {
+  margin-top: 10em;
+}
   }
 </style>

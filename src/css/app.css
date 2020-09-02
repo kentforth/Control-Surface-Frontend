@@ -9,7 +9,7 @@
   --light:#DDE2F4;
   --light-blue: #919DD9;
   --transparent: rgba(177, 186, 224, 0.5);
-  --gray: rgba(221, 226, 244, 0.5);
+  --gray: #52576E;
   --accent: #D9D57C;
 
   --transition: all 0.3s ease;
@@ -95,7 +95,10 @@ body {
 }
 
 h1 {
-
+  font-family: 'IBM Plex Sans', sans-serif;
+  color: var(--light);
+  font-size: 2rem;
+  font-weight: 500;
 }
 
 h2 {
@@ -127,4 +130,8 @@ p {
 .container {
   max-width: 90%;
   margin: 0 auto;
+}
+
+.router-link-active {
+  color: var(--accent);
 }

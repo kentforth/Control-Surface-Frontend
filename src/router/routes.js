@@ -13,16 +13,21 @@ const routes = [
   },
   {
     path: '/examples',
-    component: () => import('pages/Examples')
+    component: () => import('pages/Examples'),
   },
   {
     path: '/contact',
     component: () => import('pages/Contact')
   },
   {
+    path: '/examples/sketches',
+    component: () => import('pages/Sketches'),
+  },
+  {
     path: '*',
     component: () => import('pages/Error404.vue')
   }
 ]
+
 
 export default routes

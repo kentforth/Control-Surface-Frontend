@@ -32,6 +32,11 @@
 
 <style scoped>
 
+  .navigation {
+    -webkit-box-shadow: 0 2px 10px -1px rgba(145, 157, 217, 0.57);
+    box-shadow: 0 2px 10px -1px rgba(145, 157, 217, 0.57);
+  }
+
   #nav {
     display: grid;
     grid-template-columns: 0.6fr 1fr;
@@ -47,7 +52,7 @@
   }
 
   #nav-logo img {
-width: 100%;
+    width: 100%;
   }
 
   #nav-links {
@@ -64,11 +69,49 @@ width: 100%;
     color: var(--accent);
   }
 
-  .router-link-active {
-    color: var(--accent);
-  }
-
   .fa-github-alt {
     margin-right: 10px;
+  }
+
+  /*MEDIA QUERIES*/
+  @media screen and (max-width: 1200px) {
+    #nav {
+      grid-template-columns: 0.4fr 1fr;
+    }
+
+    #nav-logo {
+      width: 100%;
+    }
+
+    #nav-links a {
+      margin-left: 20px;
+      font-size: 1.4rem;
+    }
+  }
+
+  @media screen and (max-width: 900px) {
+
+    #nav {
+      grid-template-columns: 1fr;
+      height: 13em;
+      grid-gap: 10px;
+    }
+
+    #nav-logo {
+      width: 80%;
+      justify-self: center;
+    }
+
+    #nav-links {
+      justify-self: center;
+    }
+
+  }
+
+  @media screen and (max-width: 600px) {
+    #nav-links {
+      display: grid;grid-template-columns: 1fr 1fr;
+      grid-gap: 10px;
+    }
   }
 </style>
