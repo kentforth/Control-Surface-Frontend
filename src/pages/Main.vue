@@ -7,6 +7,7 @@
       v-model="slide"
       infinite
       class="slider"
+
     >
       <q-carousel-slide :name="1" img-src="../assets/images/slider/Controller 1.jpg"/>
       <q-carousel-slide :name="2" img-src="../assets/images/slider/Controller 2.jpg"/>
@@ -54,6 +55,7 @@
 <style scoped>
   .slider {
     height: calc(100vh - var(--height));
+
   }
 
   .info {
@@ -62,6 +64,7 @@
     top: 28%;
     left: 7%;
     padding: 4em;
+    z-index: 1;
     background: rgba(43, 47, 64, 0.7);
   }
 
