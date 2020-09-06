@@ -8,7 +8,7 @@
         ><img src="../assets/images/logo.png" alt="logo"></router-link>
 
         <transition name="slide-fade">
-          <div id="nav-links" v-show="isOpen">
+          <div id="nav-links" v-if="showLinks">
             <a href="https://github.com/tttapa/Control-Surface" target="_blank">
               <i class="fab fa-github-alt"></i>
               <span>Get Library</span>
@@ -45,12 +45,23 @@
   export default {
     name: 'Navigation',
     data() {
-      return {isOpen: false}
+      return {
+        isOpen: false,
+        showLinks: true
+      }
     },
     methods: {
       toggle() {
+        this.showLinks = !this.showLinks;
         this.isOpen = !this.isOpen
       }
+    },
+    mounted() {
+      this.isOpen = false;
+      if (window.innerWidth <= 600) {
+        this.showLinks = false;
+      }
+
     }
   }
 </script>
@@ -193,10 +204,10 @@
 
 
   .slide-fade-enter-active {
-    transition: all 1.3s ease;
+    transition: all 1.5s ease;
   }
   .slide-fade-leave-active {
-    transition: all 1.3s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+    transition: all 1.5s cubic-bezier(1.0, 0.5, 0.8, 1.0);
   }
   .slide-fade-enter, .slide-fade-leave-to
     /* .slide-fade-leave-active below version 2.1.8 */ {
@@ -290,5 +301,40 @@
       text-align: center;
     }
 
+  }
+
+  @media screen and (max-width: 480px) {
+
+    #nav a {
+      font-size: 3rem;
+    }
+  }
+
+  @media screen and (max-width: 393px) {
+    #nav a {
+      font-size: 2.5rem;
+    }
+  }
+
+  @media screen and (max-width: 320px) {
+
+    .burger-button {
+      width: 40px;
+    }
+
+    #burger {
+      top: 6.2%;
+    }
+
+    .burger-bar--1 {
+    }
+
+    #nav-links {
+      padding-top: 2em;
+    }
+
+    #nav a {
+      font-size: 2.3rem;
+    }
   }
 </style>
