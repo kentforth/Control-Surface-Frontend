@@ -1,3 +1,4 @@
+
 name: Deployment Setup
 
 on:
@@ -18,9 +19,10 @@ jobs:
           port: 5050
           username: kentforth
           key: ${{ secrets.PRIVATE_KEY}}
+      - name: Deploy Project
           script: |
-            cd /home/kentforth/webapps/Control-Surface-Frontend
+            cd /home/kentforth/webapps/test
             git pull
             npm install --production
-            quasar build
+            npm run build
             sudo service nginx restart
