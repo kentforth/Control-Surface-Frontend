@@ -20,6 +20,7 @@ jobs:
           username: kentforth
           key: ${{ secrets.PRIVATE_KEY}}
       - name: Deploy Project
+          uses: appleboy/ssh-action@master
           script: |
             cd /home/kentforth/webapps/Control-Surface-Frontend
             git pull
