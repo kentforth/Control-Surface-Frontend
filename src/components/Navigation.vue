@@ -206,11 +206,14 @@
   .slide-fade-enter-active {
     transition: all 1.5s ease;
   }
+
   .slide-fade-leave-active {
     transition: all 1.5s cubic-bezier(1.0, 0.5, 0.8, 1.0);
   }
+
   .slide-fade-enter, .slide-fade-leave-to
-    /* .slide-fade-leave-active below version 2.1.8 */ {
+    /* .slide-fade-leave-active below version 2.1.8 */
+  {
     transform: translateY(2em);
     opacity: 0;
   }
@@ -323,18 +326,28 @@
     }
 
     #burger {
-      top: 6.2%;
+      top: 5.5%;
     }
 
-    .burger-bar--1 {
-    }
-
-    #nav-links {
-      padding-top: 2em;
+    .navigation {
+      height: 6em;
     }
 
     #nav a {
-      font-size: 2.3rem;
+      font-size: 1.9rem;
+      margin-left: 0;
     }
+
+    #nav-links {
+      padding-top: 3em;
+    }
+
+    #nav-links a {
+      margin-top: 1em;
+    }
+
+
+
+
   }
 </style>
