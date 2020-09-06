@@ -21,8 +21,8 @@ jobs:
           key: ${{ secrets.PRIVATE_KEY}}
       - name: Deploy Project
           script: |
-            cd /home/kentforth/webapps/test
+            cd /home/kentforth/webapps/Control-Surface-Frontend
             git pull
             npm install --production
-            npm run build
+            quasar build
             sudo service nginx restart
