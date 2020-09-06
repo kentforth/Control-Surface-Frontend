@@ -1,0 +1,26 @@
+name: Deployment Setup
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  job-one:
+    name: Deploy
+    runs-on: ubuntu-latest
+    steps:
+      - name: Testing VPS connection
+        uses: appleboy/ssh-action@master
+        with:
+          host: 188.68.221.122
+          port: 5050
+          username: kentforth
+          key: ${{ secrets.PRIVATE_KEY}}
+          script: |
+            cd /home/kentforth/webapps/Control-Surface-Frontend
+            git pull
+            npm install --production
+            npm run build
+            sudo service nginx restart
