@@ -84,16 +84,16 @@
 
   .examples-all {
     background-color: var(--dark);
-    padding-bottom: 8.1em;
   }
+
 
   .examples {
     display: grid;
-    padding: 5em 1.5em 0 1.5em;
+    padding: 5em 1.5em 4.1em 1.5em;
     width: 100%;
+    height: 100%;
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    grid-column-gap: 4%;
-    grid-row-gap: 8%;
+    grid-gap: 4em;
 
   }
 
@@ -126,9 +126,40 @@
     width: 100%;
     height: 100%;
     margin: 0 auto;
+    object-fit: cover;
     border-radius: 0 0 10px 10px;
 
   }
 
+  /*MEDIA QUERIES*/
+  @media screen and (max-width: 600px) {
+    .examples {
+      padding: 12em 0 4em 0;
+      justify-items: center;
+    }
 
+    .examples__item {
+      max-width: 60%;
+    }
+  }
+
+  @media screen and (max-width: 393px) {
+    .examples__item {
+      max-width: 80%;
+    }
+  }
+
+  @media screen and (max-width: 320px) {
+    .item-header h1 {
+      font-size: 1.8rem;
+    }
+
+    .examples__item {
+      max-width: 90%;
+    }
+
+    .examples {
+      padding-top: 10em;
+    }
+  }
 </style>
