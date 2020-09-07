@@ -53,6 +53,7 @@
   }
 </script>
 <style scoped>
+
   .slider {
     height: calc(100vh - var(--height));
 
@@ -83,8 +84,116 @@
   }
 
   @media screen and (max-width: 900px) {
-.slider {
-  margin-top: 10em;
-}
+    .slider {
+      margin-top: 10em;
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+
+    .info {
+      padding: 2em;
+      width: 80%;
+      left: 10%;
+    }
+
+    .info-img {
+      align-items: center;
+    }
+
+    h3, h3 > a {
+      font-size: 2.5rem;
+    }
+  }
+
+  @media screen and (max-width: 600px) {
+    .slider {
+      margin-top: 0;
+      height: calc(111.5vh - var(--height));
+    }
+
+    .info {
+      top: 23%;
+    }
+
+    h3, h3 > a {
+      font-size: 2rem;
+    }
+
+    .info-img img {
+      width: 15%;
+    }
+  }
+
+  @media screen and (max-width: 480px) {
+
+    .slider {
+      height: calc(122vh - var(--height));
+    }
+
+    .info {
+      top: 20%;
+      margin-bottom: 2em;
+    }
+
+    .info-img img {
+      margin-left: 30px;
+    }
+
+  }
+
+  @media screen and (max-width: 393px) {
+
+    .slider {
+      height: calc(130vh - var(--height));
+    }
+
+    .info-img {
+      display: grid;
+      grid-template-rows: 1fr 0.5fr;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .info-img h3 {
+      margin: 0;
+    }
+
+    .info-img img {
+      margin-left: 0;
+      width: 70px;
+      height: 70px;
+      align-self: center;
+      position: relative;
+      left: 36%;
+    }
+
+    br {
+      display: none;
+    }
+  }
+
+  @media screen and (max-width: 320px) {
+
+    .slider {
+      height: calc(170vh - var(--height));
+    }
+
+    h3, h3 > a {
+      font-size: 1.5rem;
+    }
+
+    .info-img {
+      grid-template-rows: 1fr 0.2fr;
+    }
+
+    .info-img img {
+      width: 50px;
+      height: 50px;
+      align-self: start;
+    }
+
+
+
   }
 </style>

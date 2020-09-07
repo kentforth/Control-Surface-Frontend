@@ -13,7 +13,7 @@
               <i class="fab fa-github-alt"></i>
               <span>Get Library</span>
             </a>
-            <router-link to="/examples">Sketch Examples</router-link>
+            <router-link to="/categories">Sketch Examples</router-link>
             <router-link to="/tutorials">Video Tutorials</router-link>
             <router-link to="/contact">Contact</router-link>
           </div>

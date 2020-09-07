@@ -12,16 +12,17 @@ const routes = [
     component: () => import('pages/Tutorials')
   },
   {
-    path: '/examples',
-    component: () => import('pages/Examples'),
+    path: '/categories',
+    component: () => import('pages/Categories'),
   },
   {
     path: '/contact',
     component: () => import('pages/Contact')
   },
   {
-    path: '/examples/sketches',
+    path: '/categories/:sketches',
     component: () => import('pages/Sketches'),
+    props: true
   },
   {
     path: '*',
