@@ -145,7 +145,7 @@
   @media screen and (max-width: 393px) {
 
     .slider {
-      height: calc(130vh - var(--height));
+      height: calc(135vh - var(--height));
     }
 
     .info-img {
