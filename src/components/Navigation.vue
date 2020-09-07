@@ -316,6 +316,12 @@
   @media screen and (max-width: 393px) {
     #nav a {
       font-size: 2.5rem;
+      margin-left: 0;
+    }
+
+    #nav-links a{
+      font-size: 2.4rem;
+      margin-top: 0.5em;
     }
   }
 
