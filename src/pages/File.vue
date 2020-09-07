@@ -159,10 +159,10 @@
     text-align: center;
     font-family: 'Inter', sans-serif;
     font-weight: 600;
-    border:1px solid #368dbe;
+    border: 1px solid #368dbe;
     border-top: 1px solid #c3d6df;
     text-shadow: 1px 1px 1px black;
-     box-shadow: 0 1px 3px black;
+    box-shadow: 0 1px 3px black;
     -moz-box-shadow: 0 1px 3px black;
     -webkit-box-shadow: 0 1px 3px black;
     cursor: pointer;
@@ -179,9 +179,9 @@
 
   .btn-txt {
     background-image: linear-gradient(to bottom, rgb(68, 160, 141) 50%, rgb(9, 54, 55));
-  background-image: -webkit-gradient(linear, left top, left bottom,
-  color-stop(0, rgb(68, 160, 141)), color-stop(0.51 ,rgb(9, 54, 55)));
-    border:1px solid #21CED1;
+    background-image: -webkit-gradient(linear, left top, left bottom,
+    color-stop(0, rgb(68, 160, 141)), color-stop(0.51, rgb(9, 54, 55)));
+    border: 1px solid #21CED1;
 
   }
 
@@ -212,4 +212,78 @@
     transform: translateY(3px);
   }
 
+
+  /*MEDIA QUERIES*/
+
+  @media screen and (max-width: 1200px) {
+    .sketch-area {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .sketch__video {
+      width: 100%;
+    }
+
+    .download {
+      width: 37%;
+    }
+  }
+
+  @media screen and (max-width: 900px) {
+    .download {
+      width: 50%;
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    .download {
+      width: 60%;
+    }
+  }
+
+  @media screen and (max-width: 600px) {
+    .sketch-area {
+      padding-top: 4em;
+      grid-template-columns: 1fr;
+      grid-row-gap: 2em;
+    }
+
+    .download {
+      width: 75%;
+    }
+  }
+
+  @media screen and (max-width: 480px) {
+    .download {
+      width: 90%;
+    }
+  }
+
+  @media screen and (max-width: 393px) {
+    .sketch__text {
+      font-size: 1.5rem;
+    }
+
+    .btn-download {
+      font-size: 1.5rem;
+    }
+  }
+
+  @media screen and (max-width: 320px) {
+    .sketch-area {
+      padding-top: 1em;
+      grid-template-rows: 0.6fr;
+    }
+
+    .download {
+      margin: 0 auto;
+      padding: 0 0 2em 0;
+    }
+
+    .btn-download {
+      font-size: 1.3rem;
+      padding: 10px 15px;
+    }
+
+  }
 </style>
