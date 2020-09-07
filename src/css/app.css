@@ -135,3 +135,17 @@ p {
 .router-link-active {
   color: var(--accent);
 }
+
+::-webkit-scrollbar {
+  width: 15px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--primary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(145, 158, 217, 0.5);
+  border-radius: 15px;
+  border:3px solid var(--primary)
+}

@@ -25,6 +25,11 @@ const routes = [
     props: true
   },
   {
+    path: '/categories/:sketches/:id',
+    component: () => import('pages/File'),
+    props: true
+  },
+  {
     path: '*',
     component: () => import('pages/Error404.vue')
   }

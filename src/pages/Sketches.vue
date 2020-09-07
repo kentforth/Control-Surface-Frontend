@@ -3,7 +3,8 @@
     <Navigation/>
     <div class="content container">
       <div class="sketches-all">
-        <router-link to="/" class="sketch-item" v-for="(sketch, index) in sketches" :key="index">
+        <router-link :to="sketch.sketchUrl" class="sketch-item" v-for="(sketch, index) in
+        sketches" :key="index">
           <h1>{{sketch.title}}</h1>
           <img src="../assets/images/icons/arduino file.png" alt="arduino file" class="file-img">
         </router-link>
@@ -28,43 +29,43 @@
         sketches: [
           {
             title: 'One Two',
-            sketchUrl: '/categories/:sketches/:id'
+            sketchUrl: this.$route.params.sketches + '/' + '1'
           },
           {
             title: 'Three',
-            sketchUrl: '/categories/:sketches/:id'
+            sketchUrl: this.$route.params.sketches + '/' + '2'
           },
           {
             title: 'Three',
-            sketchUrl: '/categories/:sketches/:id'
+            sketchUrl: this.$route.params.sketches + '/' + '3'
           },
           {
             title: 'Three',
-            sketchUrl: '/categories/:sketches/:id'
+            sketchUrl: this.$route.params.sketches + '/' + '4'
           },
           {
             title: 'Three',
-            sketchUrl: '/categories/:sketches/:id'
+            sketchUrl: this.$route.params.sketches + '/' + '5'
           },
           {
             title: 'Three',
-            sketchUrl: '/categories/:sketches/:id'
+            sketchUrl: this.$route.params.sketches + '/' + '6'
           },
           {
             title: 'Three',
-            sketchUrl: '/categories/:sketches/:id'
+            sketchUrl: this.$route.params.sketches + '/' + '7'
           },
           {
             title: 'Three',
-            sketchUrl: '/categories/:sketches/:id'
+            sketchUrl: this.$route.params.sketches + '/' + '8'
           },
           {
             title: 'Three',
-            sketchUrl: '/categories/:sketches/:id'
+            sketchUrl: this.$route.params.sketches + '/' + '9'
           },
 
-        ],
-        exampleName: this.$route.params.sketches
+        ]
+
       }
     },
 
