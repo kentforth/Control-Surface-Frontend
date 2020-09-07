@@ -35,14 +35,10 @@
 
         <!--DOWNLOAD SKETCH-->
         <div class="download">
-          <button class="btn-download btn-ino">
-            <span>Download ino</span>
-            <img src="../assets/images/icons/arduino infinity.png" alt="arduino infinity">
-          </button>
 
           <button class="btn-download btn-txt">
-            <span>Download txt</span>
-            <i class="fas fa-file-alt"></i>
+            <span>Download Sketch</span>
+            <i class="fas fa-download"></i>
           </button>
         </div>
 
@@ -181,12 +177,6 @@
     width: 100%;
   }
 
-  .btn-ino {
-    background-image: linear-gradient(to bottom, rgb(6, 190, 182) 50%, rgb(72, 177, 191));
-    background-image: -webkit-gradient(linear, left top, left bottom,
-    color-stop(0, rgb(6, 190, 182)), color-stop(0.51 ,rgb(72, 177, 191)));
-  }
-
   .btn-txt {
     background-image: linear-gradient(to bottom, rgb(68, 160, 141) 50%, rgb(9, 54, 55));
   background-image: -webkit-gradient(linear, left top, left bottom,
@@ -199,24 +189,27 @@
     outline: none;
   }
 
-  .fa-file-alt {
+  .fa-download {
     color: var(--light);
     margin-left: 15px;
     text-shadow: 0 1px 0 black;
   }
 
   .download {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    width: 50%;
-    grid-column-gap: 15%;
+    display: block;
+    width: 25%;
+    padding: 2em 0 2em 0;
     margin: 0 auto;
-    justify-items: center;
+
   }
 
   .btn-download img {
     width: 50px;
     margin-left: 15px;
+  }
+
+  .btn-download:active {
+    transform: translateY(3px);
   }
 
 </style>
