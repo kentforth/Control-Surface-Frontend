@@ -32,7 +32,18 @@ const routes = [
   {
     path: '*',
     component: () => import('pages/Error404.vue')
-  }
+  },
+  {
+    path: '/admin',
+    component: () => import('layouts/Admin'),
+    children: [
+      {
+        path:'/',
+        component: () => import('pages/Admin/Home')
+      }
+    ]
+  },
+
 ]
 
 
