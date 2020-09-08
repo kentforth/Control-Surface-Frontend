@@ -1,12 +1,12 @@
 <template>
     <div class="sidebar">
       <div class="links">
-        <router-link to="/video">
+        <router-link to="/admin/video">
           <i class="fas fa-video"></i>
           <span>Video</span>
         </router-link>
 
-        <router-link to="/sketches">
+        <router-link to="/admin/sketches">
           <i class="far fa-file-alt"></i>
           <span>Sketches</span>
         </router-link>
@@ -69,6 +69,7 @@
     border:none;
   }
 
+
 .btn-logout:active, .btn-logout:focus {
   outline: none;
 
@@ -81,6 +82,19 @@
   .fa-sign-out-alt {
     font-size: 3rem;
     color: rgba(221, 226, 244, 0.5);
+  }
+
+.fa-sign-out-alt {
+  transition: var(--transition);
+
+}
+
+.fa-sign-out-alt:hover {
+  color: var(--secondary);
+}
+
+  .router-link-exact-active {
+    color: var(--secondary) !important;
   }
 
 </style>

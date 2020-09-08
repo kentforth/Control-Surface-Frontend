@@ -40,7 +40,11 @@ const routes = [
       {
         path:'/',
         component: () => import('pages/Admin/Home')
-      }
+      },
+      {
+        path:'/admin/video',
+        component: () => import('pages/Admin/Video')
+      },
     ]
   },
 

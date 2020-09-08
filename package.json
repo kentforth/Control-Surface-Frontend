@@ -14,7 +14,8 @@
     "axios": "^0.18.1",
     "core-js": "^3.6.5",
     "quasar": "^1.0.0",
-    "vue-easy-lightbox": "^0.14.0"
+    "vue-easy-lightbox": "^0.14.0",
+    "vuetable-2": "^1.7.5"
   },
   "devDependencies": {
     "@quasar/app": "^2.0.0",

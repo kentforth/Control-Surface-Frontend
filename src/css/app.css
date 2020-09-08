@@ -82,6 +82,8 @@
   color: var(--accent) !important;
 }
 
+
+
 * {
   box-sizing: border-box;
 }
@@ -149,4 +151,8 @@ p {
   background: rgba(145, 158, 217, 0.5);
   border-radius: 15px;
   border:3px solid var(--primary)
+}
+
+.page {
+  min-height: 100% !important;
 }
