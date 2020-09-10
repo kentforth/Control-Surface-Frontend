@@ -94,7 +94,7 @@
 }
 
   .router-link-exact-active {
-    color: var(--secondary) !important;
+    color: var(--accent) !important;
   }
 
 </style>
