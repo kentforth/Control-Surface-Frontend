@@ -51,7 +51,7 @@
 }
 
 .links a:hover {
-  color: var(--secondary);
+  color: var(--accent);
 }
 
   .fa-video, .fa-file-alt {

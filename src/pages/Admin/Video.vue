@@ -46,7 +46,9 @@
               <td>{{video.title}}</td>
               <td>{{video.url}}</td>
               <td>
-                <button class="btn-actions"><i class="fas fa-edit"></i></button>
+                <router-link
+                  class="btn-actions"
+                  :to="`/admin/video/edit/${video._id}`"><i class="fas fa-edit"></i></router-link>
                 <button class="btn-actions"><i class="fas fa-trash"></i></button>
               </td>
             </tr>

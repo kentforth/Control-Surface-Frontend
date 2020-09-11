@@ -45,6 +45,10 @@ const routes = [
         path:'/admin/video',
         component: () => import('pages/Admin/Video')
       },
+      {
+        path:'/admin/video/edit/:id',
+        component: () => import('pages/Admin/Video-Edit')
+      },
     ]
   },
 
