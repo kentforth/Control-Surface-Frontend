@@ -162,3 +162,11 @@ p {
 .q-field__messages {
   font-size: 1rem;
 }
+
+.q-notification {
+  font-size: 25px;
+}
+
+.q-notification__icon {
+  font-size: 32px;
+}

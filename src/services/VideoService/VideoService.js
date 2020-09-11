@@ -16,6 +16,10 @@ class VideoService {
   addVideo(data) {
     return http.post(`/videos`, data);
   }
+
+  delete(id) {
+    return http.delete(`/videos/${id}`);
+  }
 }
 
 export default new VideoService();

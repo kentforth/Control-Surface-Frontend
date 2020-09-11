@@ -49,7 +49,8 @@
                 <router-link
                   class="btn-actions"
                   :to="`/admin/video/edit/${video._id}`"><i class="fas fa-edit"></i></router-link>
-                <button class="btn-actions"><i class="fas fa-trash"></i></button>
+                <button class="btn-actions"
+                        @click="deleteVideo(video._id)"><i class="fas fa-trash"></i></button>
               </td>
             </tr>
             </tbody>
@@ -114,7 +115,7 @@
                                  message: 'Video has been added',
                                  icon: 'check',
                                  color: 'positive',
-                                 timeout: '2000'
+                                 timeout: '2500'
                                });
                 this[`loading`] = false;
                 this.videoTitle = ''
@@ -131,6 +132,20 @@
           });
         }
 
+      },
+      deleteVideo(id) {
+        let videoId = id;
+        VideoService.delete(videoId).then(response => {
+          this.$q.notify({
+                           message: 'Video has been deleted',
+                           icon: 'check',
+                           color: 'positive',
+                           timeout: '2500'
+                         });
+          this.getAllVideos();
+        }).catch(error => {
+          console.log(error)
+        });
       }
     },
     mounted() {
