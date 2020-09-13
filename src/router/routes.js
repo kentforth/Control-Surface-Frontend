@@ -53,6 +53,14 @@ const routes = [
         path:'/admin/video/edit/:id',
         component: () => import('pages/Admin/Video-Edit')
       },
+      {
+        path:'/admin/sketches',
+        component: () => import('pages/Admin/Sketches')
+      },
+      {
+        path:'/admin/sketches/add',
+        component: () => import('pages/Admin/Sketch-Add')
+      },
     ]
   },
 

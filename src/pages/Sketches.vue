@@ -103,6 +103,15 @@
     justify-content: center;
     grid-template-rows: 0.3fr 1fr;
     align-items: center;
+    justify-items: center;
+  }
+
+  .sketch-item h1{
+    text-align: center;
+  }
+
+  .sketch-item img{
+    width: 80%;
   }
 
   .file-img {
@@ -113,13 +122,7 @@
     -webkit-filter: drop-shadow(0 0 15px #F2AC29);
   }
 
-  .sketch-item h1{
-    text-align: center;
-  }
 
-  .sketch-item img{
-    width: 100%;
-  }
 
 /*MEDIA QUERIES*/
   @media screen and (max-width: 1200px) {

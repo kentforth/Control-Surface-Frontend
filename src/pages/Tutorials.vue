@@ -35,7 +35,6 @@
         VideoService.getAllVideos()
           .then(response => {
             this.videos = response.data;
-            console.log(this.videos)
 
           }).catch(error => {
           console.log(error)

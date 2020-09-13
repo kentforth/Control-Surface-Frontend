@@ -131,7 +131,7 @@
 
   .image-preview {
     text-align: center;
-    padding-bottom: 4em;
+    padding-bottom: 2em;
   }
 
   .imageBtn {
@@ -155,7 +155,7 @@
 
   .btn-download {
     font-size: 2rem;
-    margin-bottom: 2em;
+    margin: 0;
     text-align: center;
     font-family: 'Inter', sans-serif;
     font-weight: 600;
@@ -198,7 +198,7 @@
   .download {
     display: block;
     width: 25%;
-    padding: 2em 0 2em 0;
+    padding: 2em 0 4em 0;
     margin: 0 auto;
 
   }

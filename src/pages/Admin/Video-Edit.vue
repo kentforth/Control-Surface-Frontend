@@ -1,6 +1,10 @@
 <template>
   <div class="video-edit">
+
+    <!--ADMIN SIDEBAR-->
     <AdminSidebar/>
+
+    <!--CONTENT-->
     <div class="content">
       <form @submit.prevent.stop="updateVideo" class="form">
         <q-input

@@ -22,7 +22,7 @@
           >
           </q-input>
           <q-btn
-            color="light-green-9" :ripple="false" icon-right="add" label="Add Video" type="submit"
+            color="light-green-6" :ripple="false" icon-right="add" label="Add Video" type="submit"
             :loading="loading"
             class="btn-add"
           />

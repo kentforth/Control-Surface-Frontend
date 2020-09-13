@@ -3,7 +3,7 @@
     <Navigation/>
     <div class="form">
       <q-form
-        @submit="onSubmit"
+        @submit.prevent="onSubmit"
       >
         <q-input color="amber-11" dark outlined v-model="username" label="Username" class="input"
                  type="text">
@@ -75,7 +75,6 @@
   }
 
   .q-field--outlined {
-    /*border: 1px solid var(--light-blue);*/
     border-radius: 5px;
   }
 

@@ -6,12 +6,13 @@
   --primary: #5E668C;
   --secondary: #5067D9;
   --dark: #242940;
-  --light:#DDE2F4;
+  --light: #DDE2F4;
   --light-blue: #919DD9;
   --transparent: rgba(177, 186, 224, 0.5);
   --gray: #52576E;
   --accent: #D9D57C;
-  --admin-sidebar: #2C3F57;
+  --admin-sidebar: #2B2F40;
+  --button-add: #8bc34a;
 
   --transition: all 0.3s ease;
   --height: 7em;
@@ -27,6 +28,7 @@
 .bg-secondary {
   background-color: var(--secondary) !important;
 }
+
 .bg-dark {
   background-color: var(--dark) !important;
 }
@@ -85,13 +87,14 @@
 }
 
 
-
 * {
   box-sizing: border-box;
 }
+
 html {
   font-size: 16px;
 }
+
 body {
   -webkit-font-smoothing: antialiased;
   font-family: 'IBM Plex Sans', sans-serif;
@@ -111,7 +114,7 @@ h2 {
 }
 
 h3 {
-color: var(--light);
+  color: var(--light);
   font-family: 'Inter', sans-serif;
 }
 
@@ -152,7 +155,7 @@ p {
 ::-webkit-scrollbar-thumb {
   background: rgba(145, 158, 217, 0.5);
   border-radius: 15px;
-  border:3px solid var(--primary)
+  border: 3px solid var(--primary)
 }
 
 .page {
