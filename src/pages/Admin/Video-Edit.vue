@@ -134,11 +134,10 @@
 
   .buttons {
     text-align: center;
-    width: 100%;
+    width: 30%;
     height: 50px;
     margin: 2em auto;
     display: grid;
-
     grid-template-columns: 1fr 1fr;
     grid-column-gap: 5em;
     justify-content: center;
@@ -154,7 +153,7 @@
     font-family: 'IBM Plex Sans', sans-serif;
     font-weight: 600;
     font-size: 1.2rem;
-    width: 30%;
+    width: 100%;
   }
 
   .btn:first-child {

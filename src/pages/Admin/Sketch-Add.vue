@@ -6,25 +6,25 @@
     <!--CONTENT-->
     <div class="content">
       <div class="form">
-        <q-form
+        <form
           @submit.prevent="addSketch"
         >
           <div class="title">
             <div class="title__text">
-              <q-input
-                color="dark" dark outlined v-model="title" label="Title" class="input"
+              <label for="title">Title</label>
+              <input
+                v-model="title" class="input"
+                id="title"
                 ref="title"
-                :rules="[val => !!val || 'Field is required']"
                 type="text"
               >
-              </q-input>
-
-              <q-input
-                color="dark" dark outlined v-model="tutorialUrl" label="Tutorial URL" class="input"
+              <label for="titleUrl">URL</label>
+              <input
+                v-model="tutorialUrl" class="input"
                 ref="tutorialUrl"
-                :rules="[val => !!val || 'Field is required']"
+                id="titleUrl"
               >
-              </q-input>
+
             </div>
             <div class="title-file">
               <label for="file-input">
@@ -43,32 +43,21 @@
 
             <!--SKETCH TEXT-->
             <div class="textarea">
-              <q-input
-                color="dark" dark outlined v-model="sketchText" label="Sketch Text"
+              <label for="textarea">Sketch</label>
+              <textarea
+                v-model="sketchText"
+                rows="8"
                 class="input text"
+                id="textarea"
                 ref="text"
-                :rules="[val => !!val || 'Field is required']"
-                type="textarea"
-              >
-              </q-input>
+              />
+
             </div>
           </div>
 
           <!--DROPDOWN MENU-->
-          <q-select
-            color="dark"
-            bg-color="cyan-1"
-            label-color="dark"
-            v-model="category"
-            :options="options"
-            rounded
-            outlined
-            id="category"
-            class="category"
-            label="Category"
-          >
-          </q-select>
-
+          <CustomSelect :options="['Potentiometers', 'Buttons', 'Encoders', 'Switches', 'Leds',
+          'Banks', 'Displays', 'Multiplexers']" class="category"/>
           <div class="button">
             <q-btn
               color="light-green-6" :ripple="false" icon-right="save" label="Save Sketch"
@@ -77,7 +66,7 @@
             />
           </div>
 
-        </q-form>
+        </form>
       </div>
     </div>
   </div>
@@ -85,10 +74,11 @@
 
 <script>
   import AdminSidebar from "components/AdminSidebar";
+  import CustomSelect from "components/CustomSelect";
 
   export default {
     name: "Sketch-Add",
-    components: {AdminSidebar},
+    components: {CustomSelect, AdminSidebar},
     meta: {
       title: 'Add Sketch'
     },
@@ -134,6 +124,7 @@
   .input {
     margin-bottom: 1.5em;
     font-size: 1.5rem;
+    resize: none !important;
   }
 
 
@@ -145,7 +136,7 @@
   .btn-add {
     font-size: 1.5rem;
     width: 100%;
-   color:var(--light) !important;
+    color: var(--light) !important;
   }
 
   .button {
@@ -153,11 +144,37 @@
     margin: 0 auto;
   }
 
+  label {
+    font-size: 1.4rem;
+    margin-bottom: 5px;
+  }
+
+  .title__text {
+    display: flex;
+    flex-direction: column;
+  }
+
   .title {
     display: grid;
     grid-template-columns: 1fr 0.2fr;
     grid-column-gap: 5em;
     align-items: center;
+  }
+
+  .input {
+    background-color: transparent;
+    border: 3px solid var(--light);
+    border-radius: 5px;
+    font-size: 1.7rem;
+    padding: 3px 10px;
+    font-weight: 500;
+    color: var(--dark);
+    transition: all 0.2s ease;
+  }
+
+  .input:active, .input:focus {
+    outline: none;
+    border: 3px solid var(--accent)
   }
 
   .title p {
@@ -200,14 +217,13 @@
 
   .text {
     font-size: 1.2rem;
+    resize: none !important;
   }
 
   .category {
-    font-size: 1.3rem;
     margin-bottom: 2em;
     width: 30%;
   }
-
 
 
 </style>
