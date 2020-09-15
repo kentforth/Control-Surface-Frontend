@@ -13,14 +13,22 @@
             <div class="title__text">
               <label for="title">Title</label>
               <input
-                v-model="title" class="input"
+                class="input"
                 id="title"
                 ref="title"
                 type="text"
+                v-model.trim="form.title"
+                :class="$v.form.title.$error ? 'is-invalid' : ''"
               >
+              <span
+                class="invalid-feedback"
+                :class="$v.form.title.$error ? 'showError' : ''"
+              >
+                Title is required
+              </span>
               <label for="titleUrl">URL</label>
               <input
-                v-model="tutorialUrl" class="input"
+                v-model.trim="form.tutorialUrl" class="input"
                 ref="tutorialUrl"
                 id="titleUrl"
               >
@@ -37,27 +45,36 @@
                 @change="selectFile"
                 multiple
                 accept="image/jpg,image/jpeg,/image/png"
+
               />
-              <p>{{file}}</p>
+              <p>{{form.file}}</p>
             </div>
 
             <!--SKETCH TEXT-->
             <div class="textarea">
               <label for="textarea">Sketch</label>
               <textarea
-                v-model="sketchText"
+                v-model="form.sketchText"
                 rows="8"
                 class="input text"
                 id="textarea"
                 ref="text"
+                :class="$v.form.sketchText.$error ? 'is-invalid' : ''"
               />
-
+              <span
+                class="invalid-feedback"
+                :class="$v.form.sketchText.$error ? 'showError' : ''"
+              >
+                Text is required
+              </span>
             </div>
           </div>
 
           <!--DROPDOWN MENU-->
-          <CustomSelect :options="['Potentiometers', 'Buttons', 'Encoders', 'Switches', 'Leds',
-          'Banks', 'Displays', 'Multiplexers']" class="category"/>
+          <CustomSelect
+            :options="['Potentiometers', 'Buttons', 'Encoders', 'Switches', 'Leds',
+          'Banks', 'Displays', 'Multiplexers']" class="category"
+          />
           <div class="button">
             <q-btn
               color="light-green-6" :ripple="false" icon-right="save" label="Save Sketch"
@@ -73,6 +90,9 @@
 </template>
 
 <script>
+  import { required } from 'vuelidate/lib/validators';
+
+
   import AdminSidebar from "components/AdminSidebar";
   import CustomSelect from "components/CustomSelect";
 
@@ -84,23 +104,38 @@
     },
     data() {
       return {
-        title: '',
-        tutorialUrl: '',
-        file: null,
-        sketchText: '',
-        category: 'Category',
-        options: [
-          'Potentiometers', 'Buttons', 'Encoders', 'Switches', 'Leds', 'Banks', 'Displays',
-          'Multiplexers'
-        ]
+        form: {
+          title: '',
+          tutorialUrl: '',
+          file: null,
+          sketchText: '',
+          category: 'Category',
+          options: [
+            'Potentiometers', 'Buttons', 'Encoders', 'Switches', 'Leds', 'Banks', 'Displays',
+            'Multiplexers'
+          ]
+        }
+
       }
+    },
+    validations: {
+      form:{
+        title: {required},
+        sketchText: {required}
+      }
+
+
     },
     methods: {
       addSketch() {
-        console.log('add Sketch');
+        this.$v.form.$touch();
+        if (this.$v.form.$error) {
+          return;
+        }
+        console.log('sketch saved');
       },
       selectFile(e) {
-        this.file = e.target.files[0].name;
+        this.form.file = e.target.files[0].name;
       },
     }
   }
@@ -121,8 +156,11 @@
     margin: 2em auto;
   }
 
+  .form span {
+    position: relative;
+  }
+
   .input {
-    margin-bottom: 1.5em;
     font-size: 1.5rem;
     resize: none !important;
   }
@@ -147,6 +185,7 @@
   label {
     font-size: 1.4rem;
     margin-bottom: 5px;
+    margin-top: 0.5em;
   }
 
   .title__text {
@@ -221,9 +260,24 @@
   }
 
   .category {
-    margin-bottom: 2em;
+    margin: 2em 0;
     width: 30%;
   }
 
+  .is-invalid{
+    border:3px solid var(--q-color-negative);
+
+  }
+
+  .invalid-feedback {
+    color: var(--q-color-negative);
+    font-size: 1rem;
+    margin-top: 3px;
+    visibility: hidden;
+  }
+
+  .showError {
+    visibility: visible;
+  }
 
 </style>
