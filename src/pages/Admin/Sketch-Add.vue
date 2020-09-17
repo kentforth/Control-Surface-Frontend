@@ -42,12 +42,14 @@
               <input
                 id="file-input"
                 type="file"
-                @change="selectFile"
+                @change="selectFile($event)"
                 multiple
                 accept="image/jpg,image/jpeg,/image/png"
 
               />
-              <p>{{form.file}}</p>
+              <p>{{form.file.name}}</p>
+              <q-spinner-pie color="amber-11" size="3em" v-bind:class="[isImagesUploading ?
+              'showSpinner' : 'hideSpinner']"/>
             </div>
 
             <!--SKETCH TEXT-->
@@ -91,7 +93,7 @@
 
 <script>
   import { required } from 'vuelidate/lib/validators';
-
+  import axios from 'axios';
 
   import AdminSidebar from "components/AdminSidebar";
   import CustomSelect from "components/CustomSelect";
@@ -104,10 +106,14 @@
     },
     data() {
       return {
+        cloudinaryUrl: 'https://api.cloudinary.com/v1_1/kentforth/upload',
+        cloudinaryPreset: 'control-surface',
+        counter: 0,
+        isImagesUploading:false,
         form: {
           title: '',
           tutorialUrl: '',
-          file: null,
+          file: '',
           sketchText: '',
           category: 'Category',
           options: [
@@ -129,14 +135,46 @@
     methods: {
       addSketch() {
         this.$v.form.$touch();
+        //check for validation
         if (this.$v.form.$error) {
           return;
         }
-        console.log('sketch saved');
+
+          console.log('Sketch saved')
+
       },
       selectFile(e) {
-        this.form.file = e.target.files[0].name;
+        //get image from file chooser
+        this.form.file = e.target.files[0];
+        this.uploadImage(e);
       },
+      uploadImage(evt) {
+        Object.values(evt.target.files).forEach(file => {
+
+            const public_id = this.form.title + ' ' + ++this.counter;
+            const formData = new FormData();
+            formData.append('file', file);
+            formData.append('upload_preset', this.cloudinaryPreset);
+            formData.append('public_id', public_id);
+          this.isImagesUploading = true;
+            axios({
+                    url: this.cloudinaryUrl,
+                    method: 'POST',
+                    headers: {
+                      'Content-Type': 'application/x-www-form-urlencoded'
+                    },
+                    data: formData
+                  }).then(response => {
+              this.counter = 0;
+              this.isImagesUploading = false;
+            }).catch(error => {
+              console.log(error)
+            });
+
+
+
+        });
+      }
     }
   }
 </script>
@@ -225,10 +263,17 @@
 
   .title-file {
     width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
   }
 
   .title-file img {
     width: 100%;
+    justify-self: center;
+    margin-left: 15px;
   }
 
   .title-file > input {
@@ -278,6 +323,14 @@
 
   .showError {
     visibility: visible;
+  }
+
+  .showSpinner {
+    visibility: visible;
+  }
+
+  .hideSpinner {
+    visibility: hidden;
   }
 
 </style>

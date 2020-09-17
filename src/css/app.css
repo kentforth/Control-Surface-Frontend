@@ -18,6 +18,7 @@
   --height: 7em;
 
   --q-color-negative: orangered;
+
 }
 
 /*Background Colors*/
@@ -85,6 +86,7 @@
 .accent {
   color: var(--accent) !important;
 }
+
 
 
 * {

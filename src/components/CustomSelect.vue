@@ -37,7 +37,6 @@
         this.selected = option;
         this.open = false;
         this.$emit('input', option);
-        console.log(this.selected)
 
       }
     },
